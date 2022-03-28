@@ -8,35 +8,35 @@ import com.example.myapplication.R
 import com.example.myapplication.databinding.ItemPersonBinding
 import com.example.myapplication.model.Person
 
-class PersonAdapter : RecyclerView.Adapter<TaskViewHolder>() {
+class PersonAdapter : RecyclerView.Adapter<PersonViewHolder>() {
 
-    val people = mutableListOf<Person>()
-    var onTaskSelectedListener: PersonSelectedListener? = null
+    private val people = mutableListOf<Person>()
+    var personSelectedListener: PersonSelectedListener? = null
 
-    fun setTasks(tasks: List<Person>) {
+    fun setPeople(people: List<Person>) {
         this.people.clear()
-        this.people.addAll(tasks)
+        this.people.addAll(people)
         this.notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_person, parent, false)
-        return TaskViewHolder(view)
+        return PersonViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        val task = people[position]
-        holder.bind(task)
-        onTaskSelectedListener?.let { listener ->
-            holder.itemView.setOnClickListener { listener.onTaskSelected(task.id) }
+    override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
+        val person = people[position]
+        holder.bind(person)
+        personSelectedListener?.let { listener ->
+            holder.itemView.setOnClickListener { listener.personSelected(person.id) }
         }
     }
 
     override fun getItemCount(): Int = people.count()
 }
 
-class TaskViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(person: Person) {
 

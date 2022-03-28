@@ -1,6 +1,6 @@
 package com.example.myapplication.ui.person_details
 
-import android.app.Person
+import com.example.myapplication.model.Person
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,23 +18,23 @@ class PersonDetailsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentPersonDetailsBinding.inflate(
             inflater, container, false
         )
         return binding.root
     }
 
-    private val taskRepository = PersonRepositoryFactory.taskRepository
+    private val peopleRepository = PersonRepositoryFactory.peopleRepository
     private val args: PersonDetailsFragmentArgs by navArgs() // TaskDetailsFragmentArgs
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val task = taskRepository.getTaskById(args.personid)
-        display(task)
+        val person = peopleRepository.getTaskById(args.personid)
+        display(person)
     }
 
-    private fun display(person: com.example.myapplication.model.Person?) {
+    private fun display(person: Person?) {
         person?.let {
             binding.apply {
                 binding.itemPersonId.text = person.id.toString()
@@ -48,13 +48,13 @@ class PersonDetailsFragment : Fragment() {
         }
     }
 
-    companion object {
-        val Tag = "TasksDetails"
-        val TaskIdKey = "TaskId"
-
-        fun create(id: Long): Fragment {
-            val fragment = PersonDetailsFragment() //TaskDetailsFragmentTaskDetailsFragment
-            return fragment
-        }
-    }
+//    companion object {
+//        //val Tag = "TasksDetails"
+//        //val TaskIdKey = "TaskId"
+//
+//        fun create(id: Long): Fragment {
+//            val fragment = PersonDetailsFragment() //TaskDetailsFragmentTaskDetailsFragment
+//            return fragment
+//        }
+//    }
 }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="save_person">Save Person</string>
+    <string name="input_quote">Input quote</string>
+    <string name="input_year">Input year</string>
+    <string name="input_name">Input name</string>
+    <string name="input_id">Input id</string>
 </resources>

@@ -3,7 +3,7 @@ package com.example.myapplication.data
 import com.example.myapplication.model.Person
 import kotlin.random.Random
 
-class InMemoryDb : TaskDao {
+class InMemoryDb : PersonDao {
 
     private val people = mutableListOf<Person>()
 
@@ -19,12 +19,12 @@ class InMemoryDb : TaskDao {
         }
     }
 
-    override fun save(task: Person) {
-        people.add(task)
+    override fun save(person: Person) {
+        people.add(person)
     }
 
-    override fun delete(task: Person) {
-        people.remove(task)
+    override fun delete(person: Person) {
+        people.remove(person)
     }
 
     override fun getTaskById(id: Long): Person? {

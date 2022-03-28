@@ -2,10 +2,10 @@ package com.example.myapplication.data
 
 import com.example.myapplication.model.Person
 
-interface TaskDao {
+interface PersonDao {
 
-    fun save(task: Person)
-    fun delete(task: Person)
+    fun save(person: Person)
+    fun delete(person: Person)
     fun getTaskById(id: Long): Person?
     fun getAllTasks(): List<Person>
 }

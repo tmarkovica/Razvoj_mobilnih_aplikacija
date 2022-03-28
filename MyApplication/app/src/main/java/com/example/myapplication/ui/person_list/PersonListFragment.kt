@@ -16,7 +16,7 @@ class PersonListFragment : Fragment(), PersonSelectedListener {
     private lateinit var binding: FragmentPersonListBinding
 
     private lateinit var adapter: PersonAdapter
-    private val taskRepository = PersonRepositoryFactory.taskRepository
+    private val peopleRepository = PersonRepositoryFactory.peopleRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -47,7 +47,7 @@ class PersonListFragment : Fragment(), PersonSelectedListener {
         )
 
         adapter = PersonAdapter()
-        adapter.onTaskSelectedListener = this
+        adapter.personSelectedListener = this
         binding.personListRv.adapter = adapter
     }
 
@@ -58,16 +58,16 @@ class PersonListFragment : Fragment(), PersonSelectedListener {
     }
 
     private fun updateData() {
-        adapter.setTasks(taskRepository.getAllTasks())
+        adapter.setPeople(peopleRepository.getAllTasks())
     }
 
-    companion object {
-        fun create(): Fragment {
-            return PersonListFragment()
-        }
-    }
+//    companion object {
+//        fun create(): Fragment {
+//            return PersonListFragment()
+//        }
+//    }
 
-    override fun onTaskSelected(id: Long?) {
+    override fun personSelected(id: Long?) {
         val action =
             PersonListFragmentDirections.actionPersonListFragmentToPersonDetailsFragment(id ?: -1)
         findNavController().navigate(action)

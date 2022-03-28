@@ -16,7 +16,7 @@ class PersonNewFragment : Fragment() {
 
     private lateinit var binding: FragmentPersonNewBinding
 
-    private val taskRepository = PersonRepositoryFactory.taskRepository //TaskRepositoryFactory
+    private val peopleRepository = PersonRepositoryFactory.peopleRepository //TaskRepositoryFactory
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,23 +44,24 @@ class PersonNewFragment : Fragment() {
 //
 //        taskRepository.save(Task(0, title, contents, priority))
 
-        var q = mutableListOf<String>("quote1", "quote2")
+        val id: Long = binding.addId.text.toString().toLong()
+        val name = binding.addName.text.toString()
+        val year = binding.addYear.text.toString()
+        var q = mutableListOf<String>("quote1", binding.addQuote.text.toString())
 
-        val person = Person(55, "tm", "1998", q)
+        val person = Person(id, name, year, q)
+
 
 
         Toast.makeText(context, getString(R.string.save_person), Toast.LENGTH_SHORT).show()
-
         val action = PersonNewFragmentDirections.actionPersonNewFragmentToPersonListFragment()
-            //NewTaskFragmentDirections.actionNewTaskFragmentToTaskListFragment()
-
-        taskRepository.save(person)
+        peopleRepository.save(person)
         findNavController().navigate(action)
     }
 
-    companion object {
-        fun create(): Fragment {
-            return PersonNewFragment()
-        }
-    }
+//    companion object {
+//        fun create(): Fragment {
+//            return PersonNewFragment()
+//        }
+//    }
 }
