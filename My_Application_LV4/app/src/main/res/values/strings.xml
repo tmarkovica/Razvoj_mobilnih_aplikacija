@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application LV4</string>
+    <string name="label_team1score1">1 point</string>
+    <string name="label_score1">1 point</string>
+    <string name="label_score2">2 points</string>
+    <string name="label_score3">3 points</string>
+    <string name="reset_score">Reset score</string>
+    <string name="save_score">Save score</string>
+</resources>

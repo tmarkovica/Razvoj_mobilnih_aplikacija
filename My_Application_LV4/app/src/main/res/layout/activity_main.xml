@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/margin_medium" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/margin_medium" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/margin_medium" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/margin_medium" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_centre_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <TextView
+        android:id="@+id/tv_team1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSize_large"
+        app:layout_constraintEnd_toStartOf="@id/guide_centre_vertical"
+        app:layout_constraintStart_toEndOf="@id/guide_start"
+        app:layout_constraintTop_toBottomOf="@id/guide_top"
+        tools:text="0" />
+
+    <Button
+        android:id="@+id/b_team1score1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score1"
+        app:layout_constraintEnd_toEndOf="@id/tv_team1"
+        app:layout_constraintStart_toStartOf="@id/tv_team1"
+        app:layout_constraintTop_toBottomOf="@id/tv_team1" />
+
+    <Button
+        android:id="@+id/b_team1score2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score2"
+        app:layout_constraintEnd_toEndOf="@id/tv_team1"
+        app:layout_constraintStart_toStartOf="@id/tv_team1"
+        app:layout_constraintTop_toBottomOf="@id/b_team1score1" />
+
+    <Button
+        android:id="@+id/b_team1score3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score3"
+        app:layout_constraintEnd_toEndOf="@id/tv_team1"
+        app:layout_constraintStart_toStartOf="@id/tv_team1"
+        app:layout_constraintTop_toBottomOf="@id/b_team1score2" />
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/tv_team2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:textAlignment="center"
+        android:textSize="@dimen/textSize_large"
+        app:layout_constraintEnd_toStartOf="@id/guide_end"
+        app:layout_constraintStart_toEndOf="@id/guide_centre_vertical"
+        app:layout_constraintTop_toBottomOf="@id/guide_top"
+        tools:text="0" />
+
+    <Button
+        android:id="@+id/b_team2score1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score1"
+        app:layout_constraintEnd_toEndOf="@id/tv_team2"
+        app:layout_constraintStart_toStartOf="@id/tv_team2"
+        app:layout_constraintTop_toBottomOf="@id/tv_team2" />
+
+    <Button
+        android:id="@+id/b_team2score2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score2"
+        app:layout_constraintEnd_toEndOf="@id/tv_team2"
+        app:layout_constraintStart_toStartOf="@id/tv_team2"
+        app:layout_constraintTop_toBottomOf="@id/b_team2score1" />
+
+    <Button
+        android:id="@+id/b_team2score3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:text="@string/label_score3"
+        app:layout_constraintEnd_toEndOf="@id/tv_team2"
+        app:layout_constraintStart_toStartOf="@id/tv_team2"
+        app:layout_constraintTop_toBottomOf="@id/b_team2score2" />
+
+
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="80sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b_incrementCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Increment Count"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_count"/>
+
+    <Button
+        android:id="@+id/b_resetScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_score"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <Button
+        android:id="@+id/b_saveScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_score"
+        app:layout_constraintBottom_toTopOf="@+id/b_resetScore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
