@@ -2,6 +2,7 @@
 
 ## 1. zadatak
 Kreirajte vlastitu soundboard aplikaciju koja će pustiti određeni zvuk klikom na neku sliku na sučelju. Zapakirajte i potpišite aplikaciju ključem u trajanju od 50 godina.
+
 Osnovni zahtjevi:
 - Kreirati osnovni Activity s ImageButton kontrolama
 - Povezati gumbe s različitim zvukovima

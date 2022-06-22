@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyApplicationLV5zad2</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="permissionNotGranted">permissionNotGranted</string>
+</resources>
